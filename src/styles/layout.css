@@ -7,9 +7,9 @@
 .topbar {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  gap: var(--space-4);
-  align-items: end;
-  margin-bottom: var(--space-4);
+  gap: 18px;
+  align-items: flex-end;
+  margin-bottom: 18px;
 }
 
 .play-stage {
@@ -17,14 +17,14 @@
   grid-template-columns: var(--left-dock-width) minmax(0, 1fr) var(--right-dock-width);
   gap: 18px;
   align-items: stretch;
-  min-height: calc(100vh - 138px);
+  min-height: calc(100vh - 144px);
 }
 
 .dock {
   position: sticky;
   top: 0;
   align-self: start;
-  max-height: calc(100vh - 138px);
+  max-height: calc(100vh - 144px);
   overflow: auto;
   scrollbar-width: thin;
 }
@@ -36,15 +36,15 @@
 .tank-stage {
   position: relative;
   min-height: 0;
-  height: clamp(720px, calc(100vh - 156px), 940px);
+  height: clamp(730px, calc(100vh - 164px), 960px);
 }
 
 .tank-summary {
   position: absolute;
-  top: 18px;
-  left: 18px;
+  top: 20px;
+  left: 20px;
   z-index: 4;
-  width: min(680px, calc(100% - 36px));
+  width: min(700px, calc(100% - 40px));
   pointer-events: none;
 }
 
@@ -56,7 +56,7 @@
 
   .tank-stage {
     order: -1;
-    height: min(82vh, 920px);
+    height: min(82vh, 940px);
   }
 
   .dock {

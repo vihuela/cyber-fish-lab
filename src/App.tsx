@@ -62,8 +62,8 @@ export default function App() {
   }, [rightDockOpen]);
 
   const layoutStyle = {
-    "--left-dock-width": leftDockOpen ? "292px" : "72px",
-    "--right-dock-width": rightDockOpen ? "292px" : "72px",
+    "--left-dock-width": leftDockOpen ? "278px" : "68px",
+    "--right-dock-width": rightDockOpen ? "278px" : "68px",
   } as CSSProperties;
 
   const handleDecorSelect = (slot: DecorSlot, id: string) => {
