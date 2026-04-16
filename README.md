@@ -56,6 +56,14 @@ If `4173` is already occupied, Vite will automatically try the next available po
 npm run build
 ```
 
+## GitHub Pages
+
+This repo is configured for GitHub Pages deployment through GitHub Actions.
+
+After pushing to `main`, GitHub will build and publish the site to:
+
+- `https://vihuela.github.io/cyber-fish-lab/`
+
 ## Docs
 
 - [Product Plan](./docs/product-plan.md)
