@@ -20,6 +20,11 @@ export function LeftDock({
   onSelect,
   t,
 }: LeftDockProps) {
+  const decorGroupsWithOptions = decorGroups.map((group) => ({
+    group,
+    options: getDecorOptionsBySlot(group.slot),
+  }));
+
   return (
     <aside className={`dock ${isOpen ? "open" : "collapsed"}`}>
       <div className="dock-header">
@@ -45,14 +50,19 @@ export function LeftDock({
 
       {isOpen ? (
         <div className="dock-body">
-          {decorGroups.map((group) => (
+          {decorGroupsWithOptions.map(({ group, options }) => (
             <section className="dock-section" key={group.slot}>
               <div className="section-head">
                 <p className="eyebrow">{t(copy.leftDockEyebrow)}</p>
-                <h3>{t(group.title)}</h3>
+                <div className="section-title-row">
+                  <h3>{t(group.title)}</h3>
+                  <span className="section-count">
+                    {String(options.length).padStart(2, "0")}
+                  </span>
+                </div>
               </div>
               <div className="catalog-grid">
-                {getDecorOptionsBySlot(group.slot).map((item) => {
+                {options.map((item) => {
                   const active = selectedDecor[group.slot] === item.id;
 
                   return (
@@ -62,10 +72,16 @@ export function LeftDock({
                       key={item.id}
                       onClick={() => onSelect(group.slot, item.id)}
                     >
-                      <span>{t(item.kind)}</span>
+                      <div className="catalog-card-top">
+                        <span>{t(item.kind)}</span>
+                        <i className="catalog-card-dot" aria-hidden />
+                      </div>
                       <strong>{t(item.name)}</strong>
                       <small>{t(item.effect)}</small>
-                      <em>{active ? t(copy.currentSelection) : ""}</em>
+                      <div className="catalog-card-bottom">
+                        <em>{active ? t(copy.currentSelection) : t(copy.swapReady)}</em>
+                        <div className={`catalog-preview ${item.accent}`} aria-hidden />
+                      </div>
                     </button>
                   );
                 })}

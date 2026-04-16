@@ -1,31 +1,34 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;800&family=Oxanium:wght@400;500;600;700&family=ZCOOL+QingKe+HuangYou&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@400;500;700;800&display=swap");
 
 :root {
-  color: oklch(0.92 0.016 185);
+  color: oklch(0.92 0.015 195);
   background:
-    radial-gradient(circle at top, oklch(0.28 0.042 190 / 0.55), transparent 40%),
-    radial-gradient(circle at 80% 20%, oklch(0.54 0.11 196 / 0.18), transparent 22%),
-    linear-gradient(180deg, oklch(0.17 0.014 190), oklch(0.1 0.012 196));
-  --font-body: "Manrope", "Avenir Next", sans-serif;
-  --font-display: "Oxanium", sans-serif;
+    radial-gradient(circle at 10% 10%, oklch(0.36 0.06 205 / 0.18), transparent 24%),
+    radial-gradient(circle at 85% 14%, oklch(0.7 0.1 80 / 0.09), transparent 22%),
+    radial-gradient(circle at 50% 100%, oklch(0.26 0.04 165 / 0.12), transparent 30%),
+    linear-gradient(180deg, oklch(0.13 0.012 210), oklch(0.09 0.012 220));
+  --font-body: "Exo 2", "Avenir Next", sans-serif;
+  --font-display: "Chakra Petch", "Avenir Next Condensed", sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --line: oklch(0.36 0.04 188 / 0.35);
-  --line-strong: oklch(0.62 0.07 188 / 0.36);
-  --text-soft: oklch(0.78 0.02 190);
-  --text-muted: oklch(0.63 0.02 190);
-  --panel: oklch(0.18 0.02 190 / 0.84);
-  --panel-strong: oklch(0.22 0.03 190 / 0.9);
-  --cyan: oklch(0.8 0.1 198);
-  --cyan-soft: oklch(0.74 0.08 196 / 0.25);
-  --green: oklch(0.84 0.13 151);
-  --green-soft: oklch(0.72 0.1 151 / 0.24);
-  --amber: oklch(0.82 0.13 75);
-  --amber-soft: oklch(0.78 0.1 75 / 0.24);
-  --steel: oklch(0.82 0.02 220);
-  --shadow: 0 28px 120px oklch(0.03 0.02 200 / 0.42);
+  --surface-0: oklch(0.13 0.012 214 / 0.9);
+  --surface-1: oklch(0.16 0.013 214 / 0.94);
+  --surface-2: oklch(0.2 0.014 210 / 0.96);
+  --surface-3: oklch(0.24 0.018 205 / 0.94);
+  --line: oklch(0.42 0.03 205 / 0.3);
+  --line-strong: oklch(0.66 0.06 196 / 0.42);
+  --text-soft: oklch(0.83 0.015 200);
+  --text-muted: oklch(0.63 0.014 205);
+  --cyan: oklch(0.79 0.1 202);
+  --cyan-soft: oklch(0.74 0.08 198 / 0.2);
+  --green: oklch(0.83 0.13 153);
+  --green-soft: oklch(0.74 0.11 154 / 0.2);
+  --amber: oklch(0.82 0.12 80);
+  --amber-soft: oklch(0.78 0.1 80 / 0.2);
+  --steel: oklch(0.74 0.02 230);
+  --shadow: 0 32px 120px oklch(0.03 0.01 220 / 0.46);
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -48,6 +51,7 @@ body,
 
 body {
   margin: 0;
+  font-family: var(--font-body);
 }
 
 button {
@@ -58,29 +62,35 @@ button {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
-  padding: clamp(18px, 2vw, 28px);
+  padding: clamp(16px, 2vw, 28px);
   font-family: var(--font-body);
+  isolation: isolate;
 }
 
 .shell.locale-zh {
   --font-body: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
-  --font-display: "ZCOOL QingKe HuangYou", "Noto Sans SC", sans-serif;
+  --font-display: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
 .shell.locale-en {
-  --font-body: "Manrope", "Avenir Next", sans-serif;
-  --font-display: "Oxanium", sans-serif;
+  --font-body: "Exo 2", "Avenir Next", sans-serif;
+  --font-display: "Chakra Petch", "Avenir Next Condensed", sans-serif;
 }
 
 .noise {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.12;
+  opacity: 0.34;
   background-image:
-    linear-gradient(transparent 0%, oklch(0.98 0 0 / 0.04) 50%, transparent 100%),
-    radial-gradient(circle at 30% 20%, oklch(0.9 0.02 180 / 0.08), transparent 24%),
-    radial-gradient(circle at 70% 60%, oklch(0.86 0.05 80 / 0.05), transparent 18%);
+    linear-gradient(transparent 0%, oklch(0.92 0.02 180 / 0.035) 50%, transparent 100%),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 48px,
+      oklch(0.92 0.01 190 / 0.018) 48px,
+      oklch(0.92 0.01 190 / 0.018) 49px
+    );
   mix-blend-mode: screen;
 }
 
@@ -90,14 +100,16 @@ button {
 .section-head h3,
 .fish-tag strong {
   font-family: var(--font-display);
-  letter-spacing: 0.02em;
 }
 
 .eyebrow,
 .meta-label,
 .signal-pill,
 .fish-tag span,
-.catalog-card span {
+.catalog-card span,
+.tank-corner-tag,
+.program-state,
+.section-count {
   text-transform: uppercase;
   letter-spacing: 0.18em;
   font-size: 0.72rem;
@@ -114,7 +126,7 @@ button {
 .shell.locale-zh .dock-header h2,
 .shell.locale-zh .section-head h3,
 .shell.locale-zh .fish-tag strong {
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
 }
 
 .shell.locale-zh .eyebrow,
@@ -122,21 +134,19 @@ button {
 .shell.locale-zh .signal-pill,
 .shell.locale-zh .fish-tag span,
 .shell.locale-zh .catalog-card span,
-.shell.locale-zh .decor-label {
+.shell.locale-zh .decor-label,
+.shell.locale-zh .tank-corner-tag,
+.shell.locale-zh .program-state,
+.shell.locale-zh .section-count {
   text-transform: none;
   letter-spacing: 0.08em;
 }
 
 .shell.locale-zh .dock-header p:not(.eyebrow),
 .shell.locale-zh .tank-summary p:not(.eyebrow),
-.shell.locale-zh .loadout-list li,
-.shell.locale-zh .mission-list li,
 .shell.locale-zh .catalog-card small,
-.shell.locale-zh .program-card small {
-  line-height: 1.85;
-}
-
-.shell.locale-zh .catalog-card em,
-.shell.locale-zh .mode-badge {
-  letter-spacing: 0.08em;
+.shell.locale-zh .program-card small,
+.shell.locale-zh .loadout-list small,
+.shell.locale-zh .mission-list strong {
+  line-height: 1.82;
 }

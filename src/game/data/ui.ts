@@ -40,10 +40,13 @@ export const copy = {
   sheenLabel: { zh: "高光层", en: "Highlight Layer" },
   sheenValue: { zh: "已启用", en: "Enabled" },
   currentSelection: { zh: "当前选中", en: "Current Selection" },
+  swapReady: { zh: "可立即切换", en: "Swap Ready" },
   statsTitle: { zh: "参数面板", en: "Tank Stats" },
   programsTitle: { zh: "特效程序", en: "FX Programs" },
   loadoutTitle: { zh: "已装配件", en: "Mounted Items" },
   missionsTitle: { zh: "当前任务", en: "Current Missions" },
+  stateLive: { zh: "在线", en: "Live" },
+  stateStandby: { zh: "待命", en: "Standby" },
 } satisfies Record<string, LocaleText>;
 
 export const localeOptions: LocaleOption[] = [

@@ -79,6 +79,11 @@
   left: 12px;
   display: grid;
   gap: 4px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: oklch(0.11 0.012 216 / 0.7);
+  border: 1px solid oklch(0.46 0.03 205 / 0.18);
+  backdrop-filter: blur(10px);
 }
 
 .fish-tag strong {
@@ -149,5 +154,12 @@
 @media (max-width: 860px) {
   .fish {
     transform-origin: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fish-shell,
+  .fish-particle {
+    animation: none !important;
   }
 }

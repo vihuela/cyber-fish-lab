@@ -15,7 +15,10 @@ export function TankSummary({ t }: TankSummaryProps) {
       </div>
       <div className="tank-summary-actions">
         <div className="signal-pill">{t(copy.signalPill)}</div>
-        <div className="feed-hint">{t(copy.feedHint)}</div>
+        <div className="summary-pills">
+          <div className="feed-hint">{t(copy.feedHint)}</div>
+          <div className="summary-chip">{t(copy.liveEdit)}</div>
+        </div>
       </div>
     </div>
   );

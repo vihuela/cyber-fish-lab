@@ -48,8 +48,16 @@ export function RightDock({
             <div className="quick-stat-list">
               {statRows.map((stat) => (
                 <article className={`quick-stat ${stat.tone}`} key={stat.label.en}>
-                  <span>{t(stat.label)}</span>
-                  <strong>{stat.value}</strong>
+                  <div className="quick-stat-head">
+                    <span>{t(stat.label)}</span>
+                    <strong>{stat.value}</strong>
+                  </div>
+                  <div className="stat-meter" aria-hidden>
+                    <div
+                      className="stat-meter-fill"
+                      style={{ width: `${Number.parseInt(stat.value, 10) || 0}%` }}
+                    />
+                  </div>
                 </article>
               ))}
             </div>
@@ -66,7 +74,12 @@ export function RightDock({
                   className={`program-card ${item.active ? "active" : ""}`}
                   key={item.name.en}
                 >
-                  <strong>{t(item.name)}</strong>
+                  <div className="program-card-head">
+                    <strong>{t(item.name)}</strong>
+                    <span className={`program-state ${item.active ? "active" : "standby"}`}>
+                      {item.active ? t(copy.stateLive) : t(copy.stateStandby)}
+                    </span>
+                  </div>
                   <small>{t(item.detail)}</small>
                 </article>
               ))}
@@ -81,7 +94,8 @@ export function RightDock({
             <ul className="loadout-list">
               {selectedDecorItems.map((item) => (
                 <li key={item.id}>
-                  {t(item.name)} · {t(item.effect)}
+                  <span>{t(item.name)}</span>
+                  <small>{t(item.effect)}</small>
                 </li>
               ))}
             </ul>
@@ -93,8 +107,11 @@ export function RightDock({
               <h3>{t(copy.missionsTitle)}</h3>
             </div>
             <ul className="mission-list">
-              {missions.map((mission) => (
-                <li key={mission.en}>{t(mission)}</li>
+              {missions.map((mission, index) => (
+                <li key={mission.en}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <strong>{t(mission)}</strong>
+                </li>
               ))}
             </ul>
           </section>
