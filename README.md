@@ -4,6 +4,10 @@ Cyber Fish Lab is a browser-based cyber aquarium game prototype built with React
 
 It focuses on a premium neon bio-lab atmosphere: a large living tank in the center, live fish motion, direct decoration changes, and bilingual Chinese/English UI.
 
+## Live Demo
+
+- [GitHub Pages](https://vihuela.github.io/cyber-fish-lab/)
+
 ## Current Features
 
 - Large central cyber fish tank scene
@@ -62,7 +66,7 @@ This repo is configured for GitHub Pages deployment through GitHub Actions.
 
 After pushing to `main`, GitHub will build and publish the site to:
 
-- `https://vihuela.github.io/cyber-fish-lab/`
+- [https://vihuela.github.io/cyber-fish-lab/](https://vihuela.github.io/cyber-fish-lab/)
 
 ## Docs
 
