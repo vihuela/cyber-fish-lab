@@ -1,0 +1,153 @@
+.fish {
+  position: absolute;
+  width: 236px;
+  height: 122px;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.fish-shell,
+.fish-shadow,
+.fish-tag,
+.fish-particles,
+.fish-svg {
+  position: absolute;
+}
+
+.fish-shadow {
+  inset: auto 22px 0 24px;
+  height: 18px;
+  border-radius: 999px;
+  background: radial-gradient(circle, oklch(0.02 0.01 200 / 0.55), transparent 68%);
+  transform: translateY(104px) rotateX(85deg);
+  filter: blur(8px);
+}
+
+.fish-shell {
+  inset: 0;
+  transform-style: preserve-3d;
+  animation: fish-roll 9.5s ease-in-out infinite;
+}
+
+.fish-svg {
+  inset: -6px 0 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  transform: translateZ(14px);
+}
+
+.fish-svg path,
+.fish-svg circle,
+.fish-svg ellipse {
+  transform-origin: center;
+}
+
+.fish-shell::after {
+  content: "";
+  position: absolute;
+  inset: 18px 44px 30px 32px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 26% 28%, rgba(255, 255, 255, 0.24), transparent 28%);
+  transform: translateZ(20px);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.fish-particles {
+  inset: 0;
+  pointer-events: none;
+}
+
+.fish-particle {
+  position: absolute;
+  width: 7px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, oklch(0.98 0.03 190 / 0.9), transparent 66%);
+  filter: blur(0.8px);
+  animation: fish-particle-drift 6.1s ease-in-out infinite;
+}
+
+.fp-1 { left: 22%; top: 24%; animation-delay: -1.2s; }
+.fp-2 { left: 72%; top: 32%; width: 6px; animation-delay: -3.4s; }
+.fp-3 { left: 62%; top: 66%; width: 10px; animation-delay: -2s; }
+.fp-4 { left: 30%; top: 72%; width: 5px; animation-delay: -4.1s; }
+
+.fish-tag {
+  top: calc(100% + 12px);
+  left: 12px;
+  display: grid;
+  gap: 4px;
+}
+
+.fish-tag strong {
+  font-size: 0.98rem;
+}
+
+.fish-tag small {
+  color: var(--text-muted);
+}
+
+.jelly {
+  width: 200px;
+  height: 150px;
+}
+
+.jelly .fish-shell::after {
+  inset: 20px 50px 42px 44px;
+}
+
+.tone-cyan .fish-particle {
+  background: radial-gradient(circle, oklch(0.85 0.08 194 / 0.92), transparent 66%);
+}
+
+.tone-amber .fish-particle {
+  background: radial-gradient(circle, oklch(0.95 0.12 80 / 0.9), transparent 66%);
+}
+
+.tone-mint .fish-particle {
+  background: radial-gradient(circle, oklch(0.92 0.08 176 / 0.9), transparent 66%);
+}
+
+.tone-green .fish-particle {
+  background: radial-gradient(circle, oklch(0.84 0.13 151 / 0.92), transparent 66%);
+}
+
+@keyframes fish-roll {
+  0%,
+  100% {
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+  25% {
+    transform: rotateY(-12deg) rotateX(4deg);
+  }
+  50% {
+    transform: rotateY(8deg) rotateX(-3deg);
+  }
+  75% {
+    transform: rotateY(-6deg) rotateX(2deg);
+  }
+}
+
+@keyframes fish-particle-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(0.7);
+    opacity: 0.22;
+  }
+  40% {
+    transform: translate3d(16px, -8px, 0) scale(1);
+    opacity: 0.8;
+  }
+  70% {
+    transform: translate3d(-8px, 10px, 0) scale(0.9);
+    opacity: 0.45;
+  }
+}
+
+@media (max-width: 860px) {
+  .fish {
+    transform-origin: center;
+  }
+}
